@@ -30,10 +30,3 @@ alert(mainList.budg / 30);
 console.log(mainList);
 
 
-
-var num = 33721;
-var num1 = 3*3*7*2*1;
-var num2 = num1**3;
-console.log(num);
-console.log(num1);
-console.log(num2);
