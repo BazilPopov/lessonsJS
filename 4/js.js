@@ -5,9 +5,9 @@ var arr = [];
 function start(){
 	budget = +prompt("Ваш бюджет:, ");
 	while(isNaN(budget) || budget == "" || budget == null){
-		budget = +prompt("Ваш бюджет:", "");
+		budget = +prompt("Ваш бюджет:", '');
 	}
-	namemag = prompt("Название Вашего магазина:", "");
+	namemag = prompt("Название Вашего магазина:", '');
 };
 start();
 
@@ -33,6 +33,7 @@ var mainList  = {
 				}
 			}
 		},
+
 	workTime: function workTime(time){
 		if(time<0){
 			console.log('Такого не может быть!')
@@ -45,13 +46,16 @@ var mainList  = {
 			console.log('в сутках только 24 часа!')
 		}
 	},
+
 	dnBudg: function dnBudg(){
 		alert(mainList.budg / 30);
 		},
+
 	skidos:function skidos(price){
 		if(discount == true){
 			price = price * 0.8;
 		}},
+
 	employersNam:function employersNam(){
 	for( let i = 0; i< 4; i++){
 				let name = prompt("Имя сотрудника: ", '');
@@ -63,14 +67,27 @@ var mainList  = {
 				}
 			}
 		},
+
 		chooseShopItems: function chooseShopItems(){
 			let items = prompt("Перечислите через запятую ваши товары!");
-			while((typeof(items)) != null){
+			while((typeof(items)) == null){
 				items = prompt("Перечислите через запятую ваши товары!");
 			}
 			mainList.shopItems = items.split(",");
 			mainList.shopItems.sort();
 
+		},
+
+		vivodforEach: function vivodforEach(){
+			mainList.shopItems.forEach(function(item,i,shopItems){
+				console.log( (1+i) + ") У нас Вы можете купить: " + item )
+			})
+		},
+
+		vivodforin: function vivodforin(){
+			for (let key in mainList.shopItems){
+				console.log("Наш магазин включает в себя товар: " + mainList.shopItems[key])
+			}
 		}
 
 };
